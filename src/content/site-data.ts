@@ -92,6 +92,6 @@ export const navLinks = [
   { label: "About", href: "/about" },
   { label: "Programs", href: "/programs" },
   { label: "Why Us", href: "/why-us" },
-  { label: "Apply", href: "/apply" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];

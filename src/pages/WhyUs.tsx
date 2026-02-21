@@ -2,7 +2,13 @@ import { motion } from "framer-motion";
 import { CheckCircle2, Quote } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { whyUsHero, advantages, testimonials } from "@/content/why-us-data";
+import { whyUsHero, advantages, testimonials, whyUsFaqs } from "@/content/why-us-data";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -106,6 +112,31 @@ const WhyUs = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 border-t border-border">
+        <div className="container mx-auto px-6 max-w-3xl">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
+            Frequently Asked Questions
+          </h2>
+          <Accordion type="single" collapsible className="space-y-3">
+            {whyUsFaqs.map((faq, i) => (
+              <AccordionItem
+                key={i}
+                value={`faq-${i}`}
+                className="glass-dark rounded-xl px-6 border border-border gold-border-glow"
+              >
+                <AccordionTrigger className="font-sans text-foreground hover:no-underline">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground font-sans leading-relaxed">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 
