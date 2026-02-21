@@ -10,6 +10,13 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+import whyMentorship from "@/assets/why-mentorship.jpg";
+import whyPractical from "@/assets/why-practical.jpg";
+import whyTeam from "@/assets/why-team.jpg";
+import whyLifetime from "@/assets/why-lifetime.jpg";
+
+const whyImages = [whyMentorship, whyPractical, whyTeam, whyLifetime];
+
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   visible: (i: number) => ({
@@ -55,10 +62,12 @@ const WhyUs = () => {
             >
               {/* Image placeholder */}
               <div className={`${i % 2 === 1 ? "md:order-2" : ""}`}>
-                <div className="glass-dark rounded-2xl gold-border-glow aspect-[4/3] flex items-center justify-center">
-                  <span className="gold-gradient-text font-serif text-6xl font-bold opacity-30">
-                    0{i + 1}
-                  </span>
+                <div className="rounded-2xl overflow-hidden gold-border-glow aspect-[4/3]">
+                  <img
+                    src={whyImages[i]}
+                    alt={adv.title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
 

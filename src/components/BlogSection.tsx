@@ -1,6 +1,13 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar } from "lucide-react";
+import { Link } from "react-router-dom";
 import { blogPosts } from "@/content/site-data";
+
+import blogForexTerms from "@/assets/blog-forex-terms.jpg";
+import blogBeginnersGuide from "@/assets/blog-beginners-guide.jpg";
+import blogPsychology from "@/assets/blog-psychology.jpg";
+
+const blogImages = [blogForexTerms, blogBeginnersGuide, blogPsychology];
 
 const BlogSection = () => {
   return (
@@ -37,10 +44,12 @@ const BlogSection = () => {
               transition={{ delay: i * 0.15 }}
               className="glass-dark rounded-xl overflow-hidden golden-aura group cursor-pointer"
             >
-              <div className="h-48 bg-gradient-to-br from-primary/20 to-secondary flex items-center justify-center">
-                <span className="font-serif text-6xl text-primary/30 group-hover:text-primary/50 transition-colors">
-                  "
-                </span>
+              <div className="h-48 overflow-hidden">
+                <img
+                  src={blogImages[i]}
+                  alt={post.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
               <div className="p-6">
                 <div className="flex items-center gap-2 text-muted-foreground mb-3">
@@ -53,9 +62,9 @@ const BlogSection = () => {
                 <p className="text-muted-foreground font-sans text-sm leading-relaxed mb-4">
                   {post.excerpt}
                 </p>
-                <span className="inline-flex items-center gap-1 text-primary font-sans text-sm font-medium">
+                <Link to="/blog" className="inline-flex items-center gap-1 text-primary font-sans text-sm font-medium">
                   Read More <ArrowRight className="w-4 h-4" />
-                </span>
+                </Link>
               </div>
             </motion.article>
           ))}

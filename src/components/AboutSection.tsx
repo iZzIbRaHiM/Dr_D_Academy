@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import aboutAcademy from "@/assets/about-academy.jpg";
 
 const AboutSection = () => {
   return (
@@ -46,24 +47,30 @@ const AboutSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="glass-dark rounded-2xl p-10 golden-aura"
+            className="space-y-6"
           >
-            <div className="mb-8">
-              <h3 className="font-serif text-2xl font-bold mb-2">Dr. D</h3>
-              <p className="text-primary font-sans text-sm tracking-wide">
-                Founder & Lead Mentor — Dr D Academy
+            <div className="rounded-2xl overflow-hidden gold-border-glow">
+              <img
+                src={aboutAcademy}
+                alt="Dr D Academy trading classroom"
+                className="w-full h-64 object-cover"
+              />
+            </div>
+            <div className="glass-dark rounded-2xl p-8 golden-aura">
+              <div className="mb-4">
+                <h3 className="font-serif text-2xl font-bold mb-2">Dr. D</h3>
+                <p className="text-primary font-sans text-sm tracking-wide">
+                  Founder & Lead Mentor — Dr D Academy
+                </p>
+              </div>
+              <p className="text-muted-foreground font-sans leading-relaxed text-sm">
+                Dr D Academy was founded by Dr. D, an expert with over a decade of
+                experience in the field of trading. Our goal is to protect people from
+                fraudulent schemes and improve their lives by educating them to earn
+                independently. We carefully educate, monitor, and guide individuals
+                until they are consistently profitable.
               </p>
             </div>
-            <p className="text-muted-foreground font-sans leading-relaxed">
-              Dr D Academy was founded by Dr. D, an expert with over a decade of
-              experience in the field of trading. Being the best in this
-              profession, he decided to share his knowledge with others. Our goal
-              is to protect people from fraudulent schemes in the market and
-              improve their lives by educating them to earn independently. Our team
-              of experienced and skillful mentors provide true firsthand
-              professional trading experience and techniques. We carefully educate,
-              monitor, and guide individuals until they are consistently profitable.
-            </p>
           </motion.div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { TrendingUp, CheckCircle } from "lucide-react";
+import courseSentiment from "@/assets/course-sentiment.jpg";
 
 const CourseSection = () => {
   return (
@@ -32,46 +33,55 @@ const CourseSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="max-w-4xl mx-auto glass-dark rounded-2xl p-10 md:p-14 golden-aura"
+          className="max-w-5xl mx-auto glass-dark rounded-2xl overflow-hidden golden-aura"
         >
-          <div className="flex items-center gap-3 mb-6">
-            <TrendingUp className="w-8 h-8 text-primary" />
-            <span className="text-primary font-sans font-semibold tracking-wide uppercase text-sm">
-              No. 1 Forex Market Course
-            </span>
-          </div>
-
-          <p className="text-muted-foreground font-sans text-lg leading-relaxed mb-8">
-            The Trading With Market Sentiment Program equips you with the knowledge
-            and skills of a professional trader, with the potential for profitable
-            outcomes. It encompasses numerous strategies and price action techniques
-            suitable for various financial markets and trading styles, including
-            forex, commodities, indices, and stocks—covering both intraday and swing
-            trading.
-          </p>
-
-          <div className="grid sm:grid-cols-2 gap-4 mb-10">
-            {[
-              "Price Action Mastery",
-              "Market Structure Analysis",
-              "Risk Management Framework",
-              "Live Trading Sessions",
-              "Community Access",
-              "Lifetime Support",
-            ].map((item) => (
-              <div key={item} className="flex items-center gap-3">
-                <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-foreground font-sans text-sm">{item}</span>
+          <div className="grid lg:grid-cols-2">
+            <div className="p-10 md:p-14">
+              <div className="flex items-center gap-3 mb-6">
+                <TrendingUp className="w-8 h-8 text-primary" />
+                <span className="text-primary font-sans font-semibold tracking-wide uppercase text-sm">
+                  No. 1 Forex Market Course
+                </span>
               </div>
-            ))}
-          </div>
 
-          <a
-            href="#contact"
-            className="inline-block px-10 py-4 bg-primary text-primary-foreground font-sans font-semibold rounded-lg pulse-gold hover:brightness-110 transition-all duration-300"
-          >
-            Enroll Now
-          </a>
+              <p className="text-muted-foreground font-sans text-lg leading-relaxed mb-8">
+                The Trading With Market Sentiment Program equips you with the knowledge
+                and skills of a professional trader, with the potential for profitable
+                outcomes. It encompasses numerous strategies and price action techniques
+                suitable for various financial markets and trading styles.
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-4 mb-10">
+                {[
+                  "Price Action Mastery",
+                  "Market Structure Analysis",
+                  "Risk Management Framework",
+                  "Live Trading Sessions",
+                  "Community Access",
+                  "Lifetime Support",
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span className="text-foreground font-sans text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href="#contact"
+                className="inline-block px-10 py-4 bg-primary text-primary-foreground font-sans font-semibold rounded-lg pulse-gold hover:brightness-110 transition-all duration-300"
+              >
+                Enroll Now
+              </a>
+            </div>
+            <div className="hidden lg:block">
+              <img
+                src={courseSentiment}
+                alt="Trading course in session"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

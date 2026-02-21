@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 import { benefits } from "@/content/site-data";
+import benefitsImg from "@/assets/benefits-trading.jpg";
 
 const BenefitsSection = () => {
   return (
@@ -46,21 +47,30 @@ const BenefitsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="max-w-2xl mx-auto grid sm:grid-cols-2 gap-5"
+          className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-10 items-center"
         >
-          {benefits.map((b, i) => (
-            <motion.div
-              key={b}
-              initial={{ opacity: 0, x: -10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 * i }}
-              className="flex items-center gap-3 glass-dark rounded-lg p-4 golden-aura"
-            >
-              <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-              <span className="text-foreground font-sans text-sm">{b}</span>
-            </motion.div>
-          ))}
+          <div className="grid sm:grid-cols-2 gap-5">
+            {benefits.map((b, i) => (
+              <motion.div
+                key={b}
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 * i }}
+                className="flex items-center gap-3 glass-dark rounded-lg p-4 golden-aura"
+              >
+                <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                <span className="text-foreground font-sans text-sm">{b}</span>
+              </motion.div>
+            ))}
+          </div>
+          <div className="rounded-2xl overflow-hidden gold-border-glow">
+            <img
+              src={benefitsImg}
+              alt="Professional trading setup"
+              className="w-full h-80 object-cover"
+            />
+          </div>
         </motion.div>
 
         <motion.div
