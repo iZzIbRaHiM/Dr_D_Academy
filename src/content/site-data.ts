@@ -88,10 +88,10 @@ export const blogPosts = [
 ];
 
 export const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Courses", href: "#courses" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "Blog", href: "#blog" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Programs", href: "/programs" },
+  { label: "Why Us", href: "/why-us" },
+  { label: "Apply", href: "/apply" },
+  { label: "Contact", href: "/contact" },
 ];

@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import { navLinks } from "@/content/site-data";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   return (
     <motion.header
@@ -14,29 +16,31 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 glass-dark"
     >
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <span className="font-serif text-2xl font-bold gold-gradient-text">
             Dr D Academy
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
-              className="text-sm font-sans text-muted-foreground gold-underline hover:text-primary transition-colors duration-300 pb-1"
+              to={link.href}
+              className={`text-sm font-sans gold-underline hover:text-primary transition-colors duration-300 pb-1 ${
+                location.pathname === link.href ? "text-primary" : "text-muted-foreground"
+              }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#contact"
+          <Link
+            to="/apply"
             className="ml-4 px-6 py-2.5 border border-primary/50 text-primary font-sans text-sm font-medium rounded golden-aura hover:bg-primary/10 transition-all duration-300"
           >
             Apply for Membership
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile toggle */}
@@ -59,22 +63,24 @@ const Navbar = () => {
           >
             <div className="container mx-auto px-6 py-4 flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
+                  to={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-muted-foreground hover:text-primary transition-colors font-sans"
+                  className={`font-sans transition-colors ${
+                    location.pathname === link.href ? "text-primary" : "text-muted-foreground hover:text-primary"
+                  }`}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
-              <a
-                href="#contact"
+              <Link
+                to="/apply"
                 onClick={() => setIsOpen(false)}
                 className="px-6 py-2.5 border border-primary/50 text-primary text-center font-sans text-sm font-medium rounded golden-aura"
               >
                 Apply for Membership
-              </a>
+              </Link>
             </div>
           </motion.nav>
         )}

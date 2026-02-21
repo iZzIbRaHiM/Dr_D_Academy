@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { navLinks } from "@/content/site-data";
 
 const Footer = () => {
@@ -6,9 +7,9 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           <div>
-            <span className="font-serif text-2xl font-bold gold-gradient-text">
+            <Link to="/" className="font-serif text-2xl font-bold gold-gradient-text">
               Dr D Academy
-            </span>
+            </Link>
             <p className="text-muted-foreground font-sans text-sm mt-4 leading-relaxed">
               The premier trading institute dedicated to transforming aspiring
               traders into consistently profitable professionals through
@@ -22,13 +23,13 @@ const Footer = () => {
             </h4>
             <nav className="space-y-3">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
+                  to={link.href}
                   className="block text-muted-foreground font-sans text-sm hover:text-primary transition-colors"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>
